@@ -35,12 +35,7 @@
         });
     });
     
-    selectCharacterElem.addEventListener('click', function(e){
-        const value = e.target.getAttribute('data-char');
-        document.body.setAttribute('data-char', value);
-        
-        
-    });
+    
     resizeHandler();
 
 })();
