@@ -7,6 +7,8 @@
     let maxScrollValue;
     
     
+    
+    
     function resizeHandler(){
         maxScrollValue = document.body.offsetHeight - window.innerHeight;
     }
