@@ -16,7 +16,7 @@
     window.addEventListener('scroll', function(){
         const scrollStatus = pageYOffset / maxScrollValue;
         const zMove = scrollStatus * 980 - 490;
-       houseElem.style.transform = 'translateZ(' + zMove + 'vw)';
+        houseElem.style.transform = 'translateZ(' + zMove + 'vw)';
         
         //progress bar
         barElem.style.width = scrollStatus *100 + '%'; 
@@ -28,11 +28,16 @@
     });
     window.addEventListener('resize', resizeHandler);
     stageElem.addEventListener('click', function(e){
-        
-        new Character({
-            xPos : e.clientX / window.innerWidth * 100,
-            speed: Math.random() * 0.5 + 0.2
-        });
+        if(window.pageYOffset < 1000){
+            new Character({
+                xPos : e.clientX / window.innerWidth * 100,
+                speed: Math.random() * 0.5 + 0.2
+            });
+        }else{
+            return false;
+        }
+            
+
     });
     
     

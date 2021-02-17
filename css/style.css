@@ -98,6 +98,7 @@ body[data-char = 'ragirl']{
 }
 .wall-content{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -105,6 +106,7 @@ body[data-char = 'ragirl']{
 }
 .wall-title{
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -162,7 +164,7 @@ body[data-char = 'ragirl']{
 }
 
 .project_description h3{
-    color: var(--color-orange);
+    color: orangered;
 }
 
 .project_description h3:after {
@@ -173,16 +175,16 @@ body[data-char = 'ragirl']{
     transform: translateX(-50%);
     width: 30px;
     height: 2px;
-    background-color: var(--color-dark-white);
+    background-color: #eee;
     margin-top: 10px;
 }
 .progress-bar-con{
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100vw;
     height: 5px;
-    background: #555;
+    background-color: saddlebrown;
     z-index: 100;
 }
 .progress-bar{
