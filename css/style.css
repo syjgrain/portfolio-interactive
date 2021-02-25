@@ -27,10 +27,31 @@ body {
     background-size: cover;
     height: 500vw;
 }
-body[data-char = 'ragirl']{
-    background: #222;
-    transition: background .5s;
+a{
+    text-decoration: none;
+    color: #333;
+    text-align: center;
 }
+h3{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: orange;
+}
+.progress-bar-con{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 5px;
+    background-color: saddlebrown;
+    z-index: 100;
+}
+.progress-bar{
+    width: 0;
+    height: 100%;
+    background: crimson;
+}
+
 .world{
     position: fixed;
     top: 0;
@@ -108,15 +129,36 @@ body[data-char = 'ragirl']{
     font-size: 2rem;
     margin-bottom: 1rem;
 }
-
-
-
+.profile-pic{
+    width: 1000px;
+    
+    border-radius: 20px;
+    overflow: hidden;
+}
+.profile-pic img{
+    width: 100%;
+    display: block;
+}
+.project-title{
+    font-size: 3rem;
+    color: black;
+    animation: jello 1s infinite;
+    margin: 1rem 0;
+}
+.project-msg{
+    font-size: 1.5rem;
+    color: #555;
+    font-weight: bold;
+}
 .work_projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     opacity: 1;
     transition: all var(--animation-duration) ease-out;
+    width: 100%;
+    height: 80%;
+    padding: 1rem;
 }
 
 .work_projects.anim-out{
@@ -131,6 +173,7 @@ body[data-char = 'ragirl']{
     margin: 2.5px;
     background-color: var(--color-light-white);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -140,60 +183,104 @@ body[data-char = 'ragirl']{
 
 .project_img{
     max-width: 100%;
-    max-height: 100%;
+    height: 80%;
+    transition: 0.3s;
 }
-
+.project_img:hover{
+    transform: scale(1.05);
+}
 .project_description{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: black;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all var(--animation-duration)ease-in;
+    align-items: center;
+    margin-top: 2rem;
 }
 
-.project:hover .project_description {
-    opacity: 0.8;
-    transform: translateY(0px);
-}
+
 
 .project_description h3{
-    color: orangered;
+    color: black;
 }
 
-.project_description h3:after {
-    content: '';
-    display: block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 2px;
-    background-color: #eee;
-    margin-top: 10px;
+
+
+.wall-front-d .wall-content{
+    display: flex;
+    width: 100%;
+    padding: 1rem;
 }
-.progress-bar-con{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 5px;
-    background-color: saddlebrown;
+.skill-container{
+    width: 50%;
+}
+
+.skillset {
+    display: flex;
+    background-color: #888;
+    color: white;
+    width: 100%;
+}
+
+.skillset_title{
+    color: white;
+}
+
+.skillset_left {
+    flex-basis: 60%;
+    background-color: #444;
+    padding: 20px 40px;
+}
+.skill{
+    margin-bottom: 32px;
+}
+.skill_description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill_bar{
+    width: 100%;
+    height: 3px;
+    background-color: #666;
+}
+.skill_value{
+    height: 3px;
+    background-color: orange;
+}
+
+.skillset_right {
+    flex-basis: 40%;
+}
+
+.tools{
+    background-color: #333;
+}
+
+.tools,
+.etc{
+    padding: 20px;
+}
+
+.contact-container{
+    width: 50%;
+}
+
+.modal{
+    width: 500px;
+    height: 500px;
+    background: white;
+    position: absolute;
     z-index: 100;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.progress-bar{
-    width: 0;
-    height: 100%;
-    background: crimson;
-}
-
-
 /*character*/
 .character {
     position: absolute;
@@ -263,7 +350,7 @@ body[data-char = 'ragirl']{
     left: calc(220 / 856 * 100%);
     top: calc(1041 / 1334 * 100%);
     width: calc(220 /  856 * 100%);
-    height: calc(220 / 1334 * 100%);
+    height: calc(230 / 1334 * 100%);
     transform-origin: center top;
 }
 .character-leg-right .face-front { background-image: url('../images/farmer-back-leg-1.png'); }
